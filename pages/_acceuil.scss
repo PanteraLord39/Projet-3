@@ -1,0 +1,117 @@
+body{
+    margin: 0;
+}
+
+#explorer{
+    background-color: lighten(black,97%);
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    text-align: center;
+    h1{
+        font-family: roboto;
+        font-size: 17px;
+    }
+    h2{
+    
+        font-size: 15px;
+    }
+    form{
+        background-color: lighten(black, 90%);
+        padding: 10px;
+        .fa-solid{
+            align-items: center;
+        }
+        input{
+            font-family:"roboto";
+            font-size: 20px;
+            font-weight: 400;
+            text-align: center;
+            width: 40%;
+            &:focus{
+                outline: none;
+                &::placeholder{
+                    color: transparent;
+                }
+            }
+        }
+    }
+}
+#fonctionnement{
+    font-family: roboto;
+    font-weight: 500;       
+    
+    .fa-solid{
+        color: lighten(black,40%);
+        padding:10px 20px 10px 0;
+    }
+    h3{
+        padding: 0;
+    }
+    ol {
+        list-style: none;
+        counter-reset: my-awesome-counter;
+        display: flex;
+        flex-direction: column;
+        padding: 0 0 30px 0;
+    }
+    li {
+        flex-basis: 2%;
+        counter-increment: my-awesome-counter;
+        
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        background-color: rgb(255, 255, 255);
+        border-radius: 20px;
+        box-shadow: 0px 5px 15px 0 rgb(184, 184, 184);
+        margin: 0 0 20px 25px;
+    } 
+    li:hover{
+        .fa-solid{
+            color: $colour-primaire;
+        }
+        background-color: lighten($colour-primaire,36%);
+        
+    }
+    li::before {
+        right: 15px;
+        position: relative;
+        content: counter(my-awesome-counter);
+        background: $colour-primaire;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        display: inline-block;
+        line-height: 2rem;
+        color: white;
+        text-align: center;
+    }
+        ol ol li::before {
+        background: $colour-primaire;
+    }
+    ol ol ol li::before {
+    background: $colour-primaire;
+    }
+}
+#restaurant{
+    background-color: lighten(black, 97%);
+    h2{
+        font-weight: 700;
+        padding: 50px  15px 0 15px;
+        margin: 0;
+    }
+}
+
+
+
+
+
+
+
+// @media screen and (max-width: 1024px) {
+    
+// }
+// @media screen and (min-width: 1025px) {
+    
+// }

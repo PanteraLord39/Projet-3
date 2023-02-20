@@ -1,0 +1,15 @@
+header{
+    display: flex;
+    // display: none; //REMOVE ME
+    justify-content: center;
+    box-shadow: 0 3px 0 0 10px;
+    #logo{
+        width: 175px;
+        margin: 10px 0;
+    }
+    &.header-menu{
+        a{
+            margin:auto 0 auto 0;
+        }
+    }
+}

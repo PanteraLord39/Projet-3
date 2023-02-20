@@ -1,0 +1,31 @@
+#order{
+    background-image: linear-gradient(to bottom, $colour-secondaire, $colour-primaire);
+    border-radius: 20px;
+    border: none;
+    color: white;
+    padding: 10px 30px ;
+    margin: 10px auto 25px auto;
+    font-family: "roboto";
+}
+#button-explorer{
+    background-image: linear-gradient(to bottom, $colour-secondaire, $colour-primaire);
+    padding: 10px 0;
+    font-family: roboto;
+    border-radius: 20px;
+    padding: 10px 30px ;
+    color: white;
+    margin: 0 auto 0 auto;
+    border: none;
+    text-align: center;
+    box-shadow: 0px 5px 7px rgb(165, 165, 165);
+}
+input{
+    border: none;
+    background:none;
+    &::placeholder{
+        color: black;
+        font-weight: 600;
+        font-size: 15px;
+    }
+}
+
