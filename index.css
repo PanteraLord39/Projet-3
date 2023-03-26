@@ -27,11 +27,11 @@ p {
   padding: 10px 30px;
   margin: 10px auto 25px auto;
   font-family: "roboto";
+  display: flex;
 }
 
 #button-explorer {
   background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
-  padding: 10px 0;
   font-family: roboto;
   border-radius: 20px;
   padding: 10px 30px;
@@ -59,13 +59,17 @@ input::placeholder {
 
 #haut-de-page {
   font-family: "Shrikhand";
-  font-size: 35px;
+  font-size: 40px;
+}
+#haut-de-page .card-menu-titre {
+  display: flex;
+  flex-direction: column;
 }
 #haut-de-page .titre-menu {
   position: relative;
-  bottom: 80PX;
+  bottom: 70PX;
   background-color: white;
-  border-radius: 30px 30px 0 0;
+  border-radius: 50px 50px 0 0;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -80,10 +84,17 @@ input::placeholder {
 }
 
 .menu {
+  padding-top: -40px;
   margin: 15px;
+}
+.menu .carte {
+  margin-top: -75px;
 }
 .menu ul {
   list-style: none;
+}
+.menu li {
+  padding-bottom: 20px;
 }
 .menu h2 {
   font-family: "roboto";
@@ -97,33 +108,104 @@ body {
   margin: 0;
 }
 
+header, main, footer {
+  position: relative;
+  animation-name: animation-bottom;
+  animation-delay: 5s;
+  animation-duration: 500ms;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: both;
+}
+
+@keyframes animation-bottom {
+  0% {
+    bottom: -50px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+.progress {
+  position: fixed;
+  top: 50%;
+  left: calc(50% - 150px);
+  height: 10px;
+  width: 300px;
+  border: 10px solid #FF79DA;
+  border-radius: 15px;
+  animation-name: sup;
+  animation-delay: 5s;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  opacity: 1;
+  z-index: 2;
+}
+
+.progress .color {
+  position: absolute;
+  background-color: #9356DC;
+  width: 0px;
+  height: 10px;
+  border-radius: 15px;
+  animation: progres 5s forwards;
+}
+
+@keyframes sup {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes progres {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
 #explorer {
   background-color: #f7f7f7;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  padding-bottom: 30px;
 }
 #explorer h1 {
-  font-family: roboto;
+  font-family: "roboto";
   font-size: 17px;
+  font-weight: 600;
 }
 #explorer h2 {
+  font-family: "roboto";
   font-size: 15px;
+  font-weight: 300;
 }
 #explorer form {
-  background-color: #e6e6e6;
-  padding: 10px;
+  padding: 10px 0;
+  justify-content: center;
+  width: 100%;
 }
 #explorer form .fa-solid {
   align-items: center;
+  padding-right: 5px;
+}
+#explorer form div {
+  display: inline-block;
 }
 #explorer form input {
   font-family: "roboto";
   font-size: 20px;
   font-weight: 400;
-  text-align: center;
-  width: 40%;
+  text-align: start;
+  width: 55%;
 }
 #explorer form input:focus {
   outline: none;
@@ -138,6 +220,7 @@ body {
 #fonctionnement {
   font-family: roboto;
   font-weight: 500;
+  padding: 0 20px;
 }
 #fonctionnement .fa-solid {
   color: #666666;
@@ -151,7 +234,7 @@ body {
   counter-reset: my-awesome-counter;
   display: flex;
   flex-direction: column;
-  padding: 0 0 30px 0;
+  padding: 0 0 10px 0;
 }
 #fonctionnement li {
   flex-basis: 2%;
@@ -162,7 +245,7 @@ body {
   background-color: rgb(255, 255, 255);
   border-radius: 20px;
   box-shadow: 0px 5px 15px 0 rgb(184, 184, 184);
-  margin: 0 0 20px 25px;
+  margin: 0 0 20px 16px;
 }
 #fonctionnement li:hover {
   background-color: #f4eefc;
@@ -192,11 +275,25 @@ body {
 
 #restaurant {
   background-color: #f7f7f7;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 #restaurant h2 {
+  font-family: "roboto";
   font-weight: 700;
-  padding: 50px 15px 0 15px;
+  padding: 20px 15px 0 15px;
   margin: 0;
+}
+#restaurant ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#restaurant li {
+  padding-bottom: 25px;
 }
 
 ul {
@@ -206,80 +303,148 @@ ul {
   justify-content: space-between;
 }
 
-.card-img {
+.container-index {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
 }
-.card-img:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-.card-img .container {
-  padding: 2px 16px;
-}
-.card-img img {
-  border-radius: 20px 20px 0 0;
+.container-index img {
   height: 200px;
+  border-radius: 20px 20px 0 0;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.card-img h2, .card-img h3, .card-img h4, .card-img p {
+.container-index .tittle-container-index {
+  flex-direction: row;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 16px;
+  text-decoration: none;
+  color: black;
+}
+.container-index i {
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: initial;
+  margin: auto 0 auto 0;
+}
+.container-index .icone-index .fa-solid {
+  display: none;
+}
+.container-index .icone-index:hover .fa-solid {
+  display: initial;
+  color: transparent;
+  background: linear-gradient(0deg, #FF79DA 0%, #9356DC 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+.container-index .icone-index:hover .fa-regular {
+  display: none;
+}
+.container-index a {
+  text-decoration: none;
+  border: none;
+}
+.container-index h2,
+.container-index h3,
+.container-index h4,
+.container-index p {
   font-family: "roboto";
   color: black;
 }
-.card-img h4 {
+.container-index h4 {
   font-weight: 300;
+  margin: 4px;
 }
-.card-img h3 {
+.container-index h3 {
   font-weight: 500;
+  margin: 4px;
 }
-.card-img p {
+.container-index p {
   font-weight: 500;
   color: green;
   background-color: #99E2D0;
   border-radius: 2px;
   width: 70px;
-  padding: 8px 8px;
-  float: right;
-}
-.card-img i {
-  float: right;
-}
-.card-img i.fa-solid {
-  -o-object-fit: cover;
-     object-fit: cover;
+  padding: 8px;
+  position: absolute;
+  right: 35px;
+  text-align: center;
 }
 
+@keyframes card-apparition {
+  0% {
+    opacity: 0;
+    transform: translateY(7%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes item-animation {
+  0% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes check-animation-open {
+  0% {
+    min-width: 0;
+    max-width: 0;
+  }
+  100% {
+    min-width: 60px;
+    max-width: 60px;
+  }
+}
 .card-menu {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
   border-radius: 15px;
   display: flex;
   flex-direction: row;
-  white-space: nowrap;
   margin: 0;
   padding: 0;
   font-family: "roboto";
+  opacity: 1;
+  transform: translateY(0);
+  animation-name: card-apparition;
+  animation-duration: 1s;
 }
 .card-menu .fa-solid.fa-circle-check {
   display: none;
 }
-.card-menu:hover {
+.card-menu:hover .item-check {
+  animation-name: check-animation-open;
+  animation-duration: 2s;
+  display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 16px 16px 0 rgba(0, 0, 0, 0.2);
+  flex: 1;
+  background-color: #99E2D0;
+  border-radius: 0 15px 15px 0;
+  min-width: 60px;
+  max-width: 60px;
 }
 .card-menu:hover .fa-solid.fa-circle-check {
+  transform: rotate(0);
+  animation: item-animation 2s;
   display: initial;
-  background-color: #99E2D0;
   color: white;
-  width: 50px;
   border-radius: 0 15px 15px 0;
 }
 .card-menu .container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  flex: 1;
 }
 .card-menu .container h3 {
   font-weight: 700;
@@ -304,13 +469,12 @@ ul {
   margin: 0;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 header {
   display: flex;
   justify-content: center;
-  box-shadow: 0 3px 0 0 10px;
+  padding: 0 40px 0 20px;
 }
 header #logo {
   width: 175px;
@@ -319,11 +483,21 @@ header #logo {
 header.header-menu a {
   margin: auto 0 auto 0;
 }
+header #image-titre {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+header .fa-solid {
+  font-size: 20px;
+  color: black;
+}
 
 footer {
   background-color: black;
   padding-left: 30px;
-  display: none;
+  display: flex;
+  flex-direction: column;
   color: white;
 }
 footer h3 {
@@ -353,4 +527,8 @@ footer .fa-solid.fa-handshake-angle {
 }
 footer li {
   padding-bottom: 10px;
+}
+footer a {
+  color: white;
+  text-decoration: none;
 }/*# sourceMappingURL=index.css.map */

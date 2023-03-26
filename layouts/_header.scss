@@ -2,7 +2,7 @@ header{
     display: flex;
     // display: none; //REMOVE ME
     justify-content: center;
-    box-shadow: 0 3px 0 0 10px;
+    padding:0 40px 0 20px ;
     #logo{
         width: 175px;
         margin: 10px 0;
@@ -11,5 +11,14 @@ header{
         a{
             margin:auto 0 auto 0;
         }
+    }
+    #image-titre{
+        display: flex;
+        flex: 1;
+        justify-content: center;
+    }
+    .fa-solid{
+        font-size: 20px;
+        color: black;
     }
 }

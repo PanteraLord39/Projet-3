@@ -6,10 +6,10 @@
     padding: 10px 30px ;
     margin: 10px auto 25px auto;
     font-family: "roboto";
+    display: flex;
 }
 #button-explorer{
     background-image: linear-gradient(to bottom, $colour-secondaire, $colour-primaire);
-    padding: 10px 0;
     font-family: roboto;
     border-radius: 20px;
     padding: 10px 30px ;

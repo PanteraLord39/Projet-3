@@ -1,78 +1,164 @@
 //header
-ul{
-    padding:0;
+ul {
+    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    // text-decoration: none;
 }
 
 //card-index.html
-.card-img {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
+.container-index {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    // transition: 0.3s;
     border-radius: 20px;
-        &:hover {
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-        }
-        .container {
-            padding: 2px 16px;
-        }
-        img {
-            border-radius: 20px 20px 0 0;
-            height: 200px;
-            object-fit:cover;
-        }
-    h2, h3, h4, p{
-        font-family: "roboto";
+    display: flex;
+    flex-direction: column;
+    
+    img {
+        height: 200px;
+        border-radius: 20px 20px 0 0;
+        object-fit: cover;
+    }
+
+    .tittle-container-index {
+        flex-direction: row;
+        flex-wrap: wrap;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2px 16px;
+        text-decoration: none;
         color: black;
-    }
-    h4{
-        font-weight: 300;
-    }
-    h3{
-        font-weight: 500;
-    }
-    p{
-        font-weight: 500;
-        color:green;
-        background-color: $colour-tertiaire;
-        border-radius: 2px;
-        width: 70px;
-        padding: 8px 8px;
-        float: right;
-    }
-    i{
-        float: right;
-        &.fa-solid{
-            object-fit: cover;
         }
-    }
+
+        i {
+            float: right;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: initial;
+            margin: auto 0 auto 0;
+        }
+        .icone-index{
+            .fa-solid{
+                display: none;
+            }
+            &:hover{
+                .fa-solid{
+                    display: initial;
+                    color:transparent;
+                    background: linear-gradient(0deg, $colour-secondaire 0%, $colour-primaire 100%); 
+                    background-clip: text;
+                }
+                .fa-regular{
+                    display: none;
+                }
+            }
+        }
+        a {
+            text-decoration: none;
+            border: none;
+        }
+
+        h2,
+        h3,
+        h4,
+        p {
+            font-family: "roboto";
+            color: black;
+        }
+
+        h4 {
+            font-weight: 300;
+            margin: 4px;
+        }
+
+        h3 {
+            font-weight: 500;
+            margin: 4px;
+        }
+
+        p {
+            font-weight: 500;
+            color: green;
+            background-color: $colour-tertiaire;
+            border-radius: 2px;
+            width: 70px;
+            padding: 8px;
+            position: absolute;
+            right: 35px;
+            text-align: center;
+        }
 }
 
 //card-menu
+@keyframes card-apparition { 
+    0% {
+        opacity: 0;
+        transform: translateY(7%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes item-animation {
+    0%  {
+        transform: rotate(-180deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+@keyframes check-animation-open {
+    0% {
+        min-width: 0;
+        max-width: 0;
+    }
+    100% {
+        min-width: 60px;
+        max-width: 60px;
+    }
+}
 .card-menu{
+
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
     border-radius: 15px;
     display: flex;
     flex-direction: row;
-    white-space: nowrap;
     margin:0;
     padding: 0;
     font-family: "roboto";
+    opacity: 1;
+    transform: translateY(0);
+    animation-name: card-apparition;
+    animation-duration: 1s;
+
+
     .fa-solid.fa-circle-check{
         display: none;
     }
-    &:hover{
-        justify-content: center;         
-        align-items: center;
-        box-shadow: 0 16px 16px 0 rgba(0,0,0,0.2);
-        
-        .fa-solid.fa-circle-check{
-            display: initial;
+    
+    &:hover{       
+        .item-check{
+            animation-name: check-animation-open;
+            animation-duration: 2s;
+            // transform: scaleX(100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
             background-color: $colour-tertiaire;
+            border-radius: 0 15px 15px 0;
+            min-width: 60px;
+            max-width: 60px;
+        }
+        .fa-solid.fa-circle-check{
+            transform: rotate(0);
+            animation: item-animation 2s;
+            display: initial;
             color: white;
-            width: 50px;
             border-radius:  0 15px 15px 0;
         }
     }
@@ -80,6 +166,7 @@ ul{
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;   
+            flex: 1;
             h3{
                 font-weight: 700;
                 width: 100%;      
@@ -103,7 +190,7 @@ ul{
                 margin:0;
                 white-space: nowrap;
                 overflow: hidden;
-                text-overflow: ellipsis;
+                // text-overflow: ellipsis;
             }
         }          
 }

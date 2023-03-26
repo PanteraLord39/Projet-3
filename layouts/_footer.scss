@@ -1,8 +1,10 @@
 footer{
     background-color: black;
     padding-left: 30px;
-    display: none; //REMOVE ME
+    display: flex;
+    flex-direction: column;
     color: white;
+
     h3{
         font-family: 'Shrikhand', cursive;
         margin: 0;   
@@ -10,25 +12,35 @@ footer{
         font-weight: 100;
         font-size: 20px;
     }
+
     h4{
         font-family: 'Roboto'; 
         font-weight: 300;
         margin: 0;
         font-size: 15px;
     }
+
     ul{
         list-style: none;
         display: flex;
         flex-wrap: wrap
     }
+
     i{
         padding-right: 10px;
         font-size: 15px;
     }
+
     .fa-solid.fa-handshake-angle{
         font-size: 11px;
     }
+
     li{
         padding-bottom: 10px;
+    }
+
+    a{
+        color: white;
+        text-decoration: none;
     }
 }
