@@ -2,11 +2,11 @@ body {
     margin: 0;
 }
 
-header,main,footer{
+.loading-transition {
     position: relative;
     animation-name: animation-bottom;
     animation-delay: 5s;
-    animation-duration: 500ms;
+    animation-duration: 1s;
     animation-timing-function: ease-out;
     animation-iteration-count: 1;
     animation-direction: normal;
@@ -57,19 +57,19 @@ header,main,footer{
     0%{
     width: 0%;
     }
-    // 25%{
-    //     width: 50%;
-    // }
-    // 50%{
-    //     width: 75%;
-    // }
-    // 75%{
-    //     width: 85%;
-    // }
+    25%{
+        width: 50%;
+    }
+    50%{
+        width: 75%;
+    }
+    75%{
+        width: 85%;
+    }
     100%{
         width: 100%;
     }
-};
+}
 
 
 
@@ -218,16 +218,3 @@ header,main,footer{
         padding-bottom: 25px;
     }
 }
-
-
-
-
-
-
-
-// @media screen and (max-width: 1024px) {
-
-// }
-// @media screen and (min-width: 1025px) {
-
-// }
