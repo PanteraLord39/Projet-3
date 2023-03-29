@@ -1,5 +1,9 @@
 #order{
     background-image: linear-gradient(to bottom, $colour-secondaire, $colour-primaire);
+    &:hover{
+        box-shadow: 0px 5px 5px rgb(165, 165, 165);
+        background-image: linear-gradient(to bottom, lighten($colour-secondaire,10%), lighten($colour-primaire,10%));
+    }
     border-radius: 20px;
     border: none;
     color: white;
@@ -7,9 +11,15 @@
     margin: 10px auto 25px auto;
     font-family: "roboto";
     display: flex;
+    box-shadow: 0px 5px 7px rgb(165, 165, 165);
 }
 #button-explorer{
     background-image: linear-gradient(to bottom, $colour-secondaire, $colour-primaire);
+    
+    &:hover{
+        box-shadow: 0px 5px 5px rgb(165, 165, 165);
+        background-image: linear-gradient(to bottom, lighten($colour-secondaire,10%), lighten($colour-primaire,10%));
+    }
     font-family: roboto;
     border-radius: 20px;
     padding: 10px 30px ;

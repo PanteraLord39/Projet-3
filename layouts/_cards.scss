@@ -131,8 +131,15 @@ header{
     font-family: "roboto";
     opacity: 1;
     transform: translateY(0);
-    animation-name: card-apparition;
-    animation-duration: 1s;    
+    animation-duration: 2s;
+    animation-name: card-apparition ;
+    animation-fill-mode: backwards;
+    &.main_courses{
+        animation-delay: 0.5s;
+    }
+    &.desserts{
+        animation-delay: 1s;
+    }
     .fa-solid.fa-circle-check{
         display: none;
     }

@@ -28,6 +28,11 @@ p {
   margin: 10px auto 25px auto;
   font-family: "roboto";
   display: flex;
+  box-shadow: 0px 5px 7px rgb(165, 165, 165);
+}
+#order:hover {
+  box-shadow: 0px 5px 5px rgb(165, 165, 165);
+  background-image: linear-gradient(to bottom, #fface8, #ae80e5);
 }
 
 #button-explorer {
@@ -40,6 +45,10 @@ p {
   border: none;
   text-align: center;
   box-shadow: 0px 5px 7px rgb(165, 165, 165);
+}
+#button-explorer:hover {
+  box-shadow: 0px 5px 5px rgb(165, 165, 165);
+  background-image: linear-gradient(to bottom, #fface8, #ae80e5);
 }
 
 input {
@@ -81,17 +90,26 @@ input::placeholder {
 }
 #haut-de-page img {
   width: 100%;
+  max-height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .menu {
-  padding-top: -40px;
   margin: 15px;
 }
 .menu .carte {
   margin-top: -75px;
 }
 .menu ul {
+  padding: 0;
   list-style: none;
+}
+@media (min-width: 700px) {
+  .menu ul {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .menu li {
   padding-bottom: 20px;
@@ -102,17 +120,18 @@ input::placeholder {
   width: 60px;
   padding-bottom: 10px;
   border-bottom: 5px solid #99E2D0;
+  text-overflow: ellipsis;
 }
 
 body {
   margin: 0;
 }
 
-header, main, footer {
+.loading-transition {
   position: relative;
   animation-name: animation-bottom;
   animation-delay: 5s;
-  animation-duration: 500ms;
+  animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-iteration-count: 1;
   animation-direction: normal;
@@ -143,6 +162,7 @@ header, main, footer {
   animation-fill-mode: forwards;
   opacity: 1;
   z-index: 2;
+  box-shadow: 0 0 20px;
 }
 
 .progress .color {
@@ -165,6 +185,15 @@ header, main, footer {
 @keyframes progres {
   0% {
     width: 0%;
+  }
+  25% {
+    width: 50%;
+  }
+  50% {
+    width: 75%;
+  }
+  75% {
+    width: 85%;
   }
   100% {
     width: 100%;
@@ -190,8 +219,8 @@ header, main, footer {
 }
 #explorer form {
   padding: 10px 0;
-  justify-content: center;
   width: 100%;
+  background-color: rgb(226, 226, 226);
 }
 #explorer form .fa-solid {
   align-items: center;
@@ -283,7 +312,7 @@ header, main, footer {
 #restaurant h2 {
   font-family: "roboto";
   font-weight: 700;
-  padding: 20px 15px 0 15px;
+  padding: 20px 0 0 0;
   margin: 0;
 }
 #restaurant ul {
@@ -291,12 +320,13 @@ header, main, footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 0;
 }
 #restaurant li {
   padding-bottom: 25px;
 }
 
-ul {
+header ul {
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -415,8 +445,15 @@ ul {
   font-family: "roboto";
   opacity: 1;
   transform: translateY(0);
+  animation-duration: 2s;
   animation-name: card-apparition;
-  animation-duration: 1s;
+  animation-fill-mode: backwards;
+}
+.card-menu.main_courses {
+  animation-delay: 0.5s;
+}
+.card-menu.desserts {
+  animation-delay: 1s;
 }
 .card-menu .fa-solid.fa-circle-check {
   display: none;
@@ -451,6 +488,7 @@ ul {
   width: 100%;
   padding-left: 20px;
   padding-top: 10px;
+  text-overflow: ellipsis;
 }
 .card-menu .container h4 {
   font-weight: 300;
@@ -458,6 +496,7 @@ ul {
   padding-left: 20px;
   padding-bottom: 10px;
   padding-top: 5px;
+  text-overflow: ellipsis;
 }
 .card-menu .container p {
   font-weight: 500;
@@ -495,7 +534,7 @@ header .fa-solid {
 
 footer {
   background-color: black;
-  padding-left: 30px;
+  padding-left: 22px;
   display: flex;
   flex-direction: column;
   color: white;
@@ -517,6 +556,8 @@ footer ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  padding: 0;
 }
 footer i {
   padding-right: 10px;
