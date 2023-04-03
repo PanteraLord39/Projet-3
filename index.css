@@ -105,7 +105,7 @@ input::placeholder {
   padding: 0;
   list-style: none;
 }
-@media (min-width: 500px) {
+@media (min-width: 700px) {
   .menu ul {
     display: flex;
     flex-direction: column;
@@ -363,6 +363,14 @@ header ul {
   position: initial;
   margin: auto 0 auto 0;
 }
+@keyframes hearth_animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
 .container-index .icone-index .fa-solid {
   display: none;
 }
@@ -372,6 +380,7 @@ header ul {
   background: linear-gradient(0deg, #FF79DA 0%, #9356DC 100%);
   -webkit-background-clip: text;
           background-clip: text;
+  animation: hearth_animation 2s;
 }
 .container-index .icone-index:hover .fa-regular {
   display: none;

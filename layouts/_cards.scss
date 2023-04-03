@@ -40,6 +40,16 @@ header{
             position: initial;
             margin: auto 0 auto 0;
         }
+
+        @keyframes hearth_animation {
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 100%;
+            }
+            
+        }
         .icone-index{
             .fa-solid{
                 display: none;
@@ -50,6 +60,7 @@ header{
                     color:transparent;
                     background: linear-gradient(0deg, $colour-secondaire 0%, $colour-primaire 100%); 
                     background-clip: text;
+                    animation: hearth_animation 2s;
                 }
                 .fa-regular{
                     display: none;
