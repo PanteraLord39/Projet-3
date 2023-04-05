@@ -167,9 +167,9 @@ body {
 .progress {
   position: fixed;
   top: 50%;
-  left: calc(50% - 150px);
+  left: calc(50% - 100px);
   height: 10px;
-  width: 300px;
+  width: 200px;
   border: 10px solid #FF79DA;
   border-radius: 15px;
   animation-name: delete-loader;
@@ -274,7 +274,7 @@ body {
   padding: 10px 20px 10px 0;
 }
 #fonctionnement h3 {
-  padding: 0;
+  padding: 0 10px 0 10px;
 }
 #fonctionnement ol {
   list-style: none;
