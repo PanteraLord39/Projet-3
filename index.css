@@ -88,6 +88,23 @@ input::placeholder {
   font-size: 23px;
   padding-right: 20px;
 }
+#haut-de-page .titre-menu .fa-solid {
+  display: none;
+}
+#haut-de-page .titre-menu:hover .fa-solid {
+  margin: auto 0 auto 0;
+  font-size: 23px;
+  padding-right: 20px;
+  display: initial;
+  color: transparent;
+  background: linear-gradient(0deg, #FF79DA 0%, #9356DC 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  animation: hearth_animation 2s;
+}
+#haut-de-page .titre-menu:hover .fa-regular {
+  display: none;
+}
 #haut-de-page img {
   width: 100%;
   max-height: 300px;
