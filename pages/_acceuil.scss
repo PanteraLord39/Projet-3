@@ -1,222 +1,220 @@
 body {
-    margin: 0;
+  margin: 0;
 }
 
 .loading-transition {
-    position: relative;
-    animation-name: animation-bottom;
-    animation-delay: 5s;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-fill-mode: both;
+  position: relative;
+  animation-name: page-appear-from-bottom;
+  animation-delay: 5s;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: both;
 }
 
-@keyframes animation-bottom { 
-    0% {
-        bottom: -50px; opacity: 0;
-    }
-    100%{
-        bottom: 0; opacity: 1;
-    }
-}
-
-.progress{
-    position: fixed;
-    top: 50%;
-    left: calc(50% - 150px);
-    height: 10px;
-    width:  300px;
-    border: 10px solid $colour-secondaire;
-    border-radius: 15px;
-    animation-name: sup;
-    animation-delay: 5s;
-    animation-direction: normal;
-    animation-fill-mode: forwards;
+@keyframes page-appear-from-bottom {
+  0% {
+    bottom: -50px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
     opacity: 1;
-    z-index: 2;
-    box-shadow: 0 0 5px;
+  }
 }
-.progress .color{
-    position: absolute;
-    background-color: $colour-primaire;
-    width: 0px;
-    height: 10px;
-    border-radius: 15px;
-    animation: progres 5s forwards;    
+
+.progress {
+  position: fixed;
+  top: 50%;
+  left: calc(50% - 150px);
+  height: 10px;
+  width: 300px;
+  border: 10px solid $colour-secondaire;
+  border-radius: 15px;
+  animation-name: delete-loader;
+  animation-delay: 5s;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  opacity: 1;
+  z-index: 2;
+  box-shadow: 0 0 5px;
 }
-@keyframes sup {
-    from{
-        opacity: 1;
-    }
-    to{
-        opacity: 0;
-    }
+.progress .color {
+  position: absolute;
+  background-color: $colour-primaire;
+  width: 0px;
+  height: 10px;
+  border-radius: 15px;
+  animation: progress-bar 5s forwards;
 }
-@keyframes progres{
-    0%{
+@keyframes delete-loader {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes progress-bar {
+  0% {
     width: 0%;
-    }
-    25%{
-        width: 50%;
-    }
-    50%{
-        width: 75%;
-    }
-    75%{
-        width: 85%;
-    }
-    100%{
-        width: 100%;
-    }
+  }
+  25% {
+    width: 50%;
+  }
+  50% {
+    width: 75%;
+  }
+  75% {
+    width: 85%;
+  }
+  100% {
+    width: 100%;
+  }
 }
-
-
 
 #explorer {
-    background-color: lighten(black, 97%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding-bottom: 30px;
+  background-color: lighten(black, 97%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 30px;
 
-    h1 {
-        font-family: "roboto";
-        font-size: 17px;
-        font-weight: 600;
+  h1 {
+    font-family: "roboto";
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  h2 {
+    font-family: "roboto";
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  form {
+    padding: 10px 0;
+    width: 100%;
+    background-color: rgb(226, 226, 226);
+
+    .fa-solid {
+      align-items: center;
+      padding-right: 5px;
     }
 
-    h2 {
-        font-family: "roboto";
-        font-size: 15px;
-        font-weight: 300;
+    div {
+      display: inline-block;
     }
 
-    form {
-        padding: 10px 0;
-        width: 100%;
-        background-color:rgb(226, 226, 226);
+    input {
+      font-family: "roboto";
+      font-size: 20px;
+      font-weight: 400;
+      text-align: start;
+      width: 55%;
 
-        .fa-solid {
-            align-items: center;
-            padding-right: 5px;
+      &:focus {
+        outline: none;
+
+        &::placeholder {
+          color: transparent;
         }
-
-        div {
-            display: inline-block;
-        }
-
-        input {
-
-            font-family: "roboto";
-            font-size: 20px;
-            font-weight: 400;
-            text-align: start;
-            width: 55%;
-
-            &:focus {
-                outline: none;
-
-                &::placeholder {
-                    color: transparent;
-                }
-            }
-        }
+      }
     }
+  }
 }
 
 #fonctionnement {
-    font-family: roboto;
-    font-weight: 500;
-    padding: 0 20px;
+  font-family: roboto;
+  font-weight: 500;
+  padding: 0 20px;
 
+  .fa-solid {
+    color: lighten(black, 40%);
+    padding: 10px 20px 10px 0;
+  }
+
+  h3 {
+    padding: 0;
+  }
+
+  ol {
+    list-style: none;
+    counter-reset: my-awesome-counter;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 10px 0;
+  }
+
+  li {
+    flex-basis: 2%;
+    counter-increment: my-awesome-counter;
+
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px 0 rgb(184, 184, 184);
+    margin: 0 0 20px 16px;
+  }
+
+  li:hover {
     .fa-solid {
-        color: lighten(black, 40%);
-        padding: 10px 20px 10px 0;
+      color: $colour-primaire;
     }
 
-    h3 {
-        padding: 0;
-    }
+    background-color: lighten($colour-primaire, 36%);
+  }
 
-    ol {
-        list-style: none;
-        counter-reset: my-awesome-counter;
-        display: flex;
-        flex-direction: column;
-        padding: 0 0 10px 0;
-    }
+  li::before {
+    right: 15px;
+    position: relative;
+    content: counter(my-awesome-counter);
+    background: $colour-primaire;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 2rem;
+    color: white;
+    text-align: center;
+  }
 
-    li {
-        flex-basis: 2%;
-        counter-increment: my-awesome-counter;
+  ol ol li::before {
+    background: $colour-primaire;
+  }
 
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        background-color: rgb(255, 255, 255);
-        border-radius: 20px;
-        box-shadow: 0px 5px 15px 0 rgb(184, 184, 184);
-        margin: 0 0 20px 16px;
-    }
-
-    li:hover {
-        .fa-solid {
-            color: $colour-primaire;
-        }
-
-        background-color: lighten($colour-primaire, 36%);
-
-    }
-
-    li::before {
-        right: 15px;
-        position: relative;
-        content: counter(my-awesome-counter);
-        background: $colour-primaire;
-        width: 2rem;
-        height: 2rem;
-        border-radius: 50%;
-        display: inline-block;
-        line-height: 2rem;
-        color: white;
-        text-align: center;
-    }
-
-    ol ol li::before {
-        background: $colour-primaire;
-    }
-
-    ol ol ol li::before {
-        background: $colour-primaire;
-    }
+  ol ol ol li::before {
+    background: $colour-primaire;
+  }
 }
 
 #restaurant {
-    background-color: lighten(black, 97%);
-    padding: 10px 20px;
+  background-color: lighten(black, 97%);
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  h2 {
+    font-family: "roboto";
+    font-weight: 700;
+    padding: 20px 0 0 0;
+    margin: 0;
+  }
+
+  ul {
+    list-style: none;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0;
+  }
 
-    h2 {
-        font-family: "roboto";
-        font-weight: 700;
-        padding: 20px 0 0 0;
-        margin: 0;
-    }
-
-    ul {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 0;
-    }
-
-    li {
-        padding-bottom: 25px;
-    }
+  li {
+    padding-bottom: 25px;
+  }
 }

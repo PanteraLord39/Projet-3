@@ -146,7 +146,7 @@ body {
 
 .loading-transition {
   position: relative;
-  animation-name: animation-bottom;
+  animation-name: page-appear-from-bottom;
   animation-delay: 5s;
   animation-duration: 1s;
   animation-timing-function: ease-out;
@@ -155,7 +155,7 @@ body {
   animation-fill-mode: both;
 }
 
-@keyframes animation-bottom {
+@keyframes page-appear-from-bottom {
   0% {
     bottom: -50px;
     opacity: 0;
@@ -173,7 +173,7 @@ body {
   width: 300px;
   border: 10px solid #FF79DA;
   border-radius: 15px;
-  animation-name: sup;
+  animation-name: delete-loader;
   animation-delay: 5s;
   animation-direction: normal;
   animation-fill-mode: forwards;
@@ -188,10 +188,10 @@ body {
   width: 0px;
   height: 10px;
   border-radius: 15px;
-  animation: progres 5s forwards;
+  animation: progress-bar 5s forwards;
 }
 
-@keyframes sup {
+@keyframes delete-loader {
   from {
     opacity: 1;
   }
@@ -199,7 +199,7 @@ body {
     opacity: 0;
   }
 }
-@keyframes progres {
+@keyframes progress-bar {
   0% {
     width: 0%;
   }
@@ -395,8 +395,9 @@ header ul {
   display: initial;
   color: transparent;
   background: linear-gradient(0deg, #FF79DA 0%, #9356DC 100%);
+  background-clip: text;
   -webkit-background-clip: text;
-          background-clip: text;
+  -moz-background-clip: text;
   animation: hearth_animation 2s;
 }
 .container-index .icone-index:hover .fa-regular {
@@ -508,6 +509,7 @@ header ul {
   flex-direction: row;
   flex-wrap: wrap;
   flex: 1;
+  overflow: hidden;
 }
 .card-menu .container h3 {
   font-weight: 700;
@@ -526,14 +528,18 @@ header ul {
 }
 .card-menu .container p {
   font-weight: 500;
-  flex: 2;
   text-align: right;
   padding-right: 20px;
 }
-.card-menu .container h3, .card-menu .container h4, .card-menu .container p {
+.card-menu .container h3,
+.card-menu .container h4,
+.card-menu .container p {
   margin: 0;
   white-space: nowrap;
   overflow: hidden;
+}
+.card-menu .price p {
+  padding-right: 20px;
 }
 
 header {
