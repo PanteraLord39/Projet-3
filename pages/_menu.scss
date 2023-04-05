@@ -16,27 +16,30 @@
         justify-content: space-around;
 
         .fa-regular{
+            // display: initial;
             margin: auto 0 auto 0;
             font-size: 23px;
             padding-right: 20px;
         }
+        &:hover{
+            .fa-regular{
+                display: none;
+            }
+        }
         .fa-solid{
             display: none;
-            // font-size: 23px;
         }
+
         &:hover{
             .fa-solid{
+                display: initial;
                 margin: auto 0 auto 0;
                 font-size: 23px;
                 padding-right: 20px;
-                display: initial;
                 color:transparent;
                 background: linear-gradient(0deg, $colour-secondaire 0%, $colour-primaire 100%); 
                 background-clip: text;
                 animation: hearth_animation 2s;
-            }
-            .fa-regular{
-                display: none;
             }
         }
     }
