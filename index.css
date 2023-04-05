@@ -526,20 +526,19 @@ header ul {
   padding-top: 5px;
   text-overflow: ellipsis;
 }
-.card-menu .container p {
-  font-weight: 500;
-  text-align: right;
-  padding-right: 20px;
-}
-.card-menu .container h3,
-.card-menu .container h4,
-.card-menu .container p {
+.card-menu h3,
+.card-menu h4,
+.card-menu p {
   margin: 0;
   white-space: nowrap;
   overflow: hidden;
 }
 .card-menu .price p {
+  height: 100%;
+  display: flex;
+  align-items: center;
   padding-right: 20px;
+  padding-left: 10px;
 }
 
 header {
