@@ -14,30 +14,30 @@
         width: 100%;
         display: flex;
         justify-content: space-around;
-
+    }
+    .heart-title-menu{
+        
         .fa-regular{
             margin: auto 0 auto 0;
             font-size: 23px;
-            padding-right: 20px;
-        }
-        &:hover{
-            .fa-regular{
-                display: none;
-            }
         }
         .fa-solid{
             display: none;
         }
-
+        
         &:hover{
+            .fa-regular{
+                display: none;
+            }
             .fa-solid{
                 display: initial;
                 margin: auto 0 auto 0;
                 font-size: 23px;
-                padding-right: 20px;
                 color:transparent;
                 background: linear-gradient(0deg, $colour-secondaire 0%, $colour-primaire 100%); 
                 background-clip: text;
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
                 animation: hearth_animation 2s;
             }
         }

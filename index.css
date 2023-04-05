@@ -83,26 +83,25 @@ input::placeholder {
   display: flex;
   justify-content: space-around;
 }
-#haut-de-page .titre-menu .fa-regular {
+#haut-de-page .heart-title-menu .fa-regular {
   margin: auto 0 auto 0;
   font-size: 23px;
-  padding-right: 20px;
 }
-#haut-de-page .titre-menu:hover .fa-regular {
+#haut-de-page .heart-title-menu .fa-solid {
   display: none;
 }
-#haut-de-page .titre-menu .fa-solid {
+#haut-de-page .heart-title-menu:hover .fa-regular {
   display: none;
 }
-#haut-de-page .titre-menu:hover .fa-solid {
+#haut-de-page .heart-title-menu:hover .fa-solid {
   display: initial;
   margin: auto 0 auto 0;
   font-size: 23px;
-  padding-right: 20px;
   color: transparent;
   background: linear-gradient(0deg, #FF79DA 0%, #9356DC 100%);
+  background-clip: text;
   -webkit-background-clip: text;
-          background-clip: text;
+  -moz-background-clip: text;
   animation: hearth_animation 2s;
 }
 #haut-de-page img {
