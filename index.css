@@ -227,11 +227,13 @@ body {
   font-family: "roboto";
   font-size: 17px;
   font-weight: 600;
+  padding: 0 10px 0 10px;
 }
 #explorer h2 {
   font-family: "roboto";
   font-size: 15px;
   font-weight: 300;
+  padding: 0 10px 0 10px;
 }
 #explorer form {
   padding: 10px 0;
